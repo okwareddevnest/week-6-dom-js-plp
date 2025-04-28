@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Modifying</title>
+    <style>
+        .highlight{
+            background-color: gray;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="mainTitle">Original Title</h1>
+
+    <img id="mainImage" src="download.jpeg" alt="PLP Logo" width="350" height="350">
+
+    <p class="info">Paragraph 1</p>
+    <p class="info">Paragraph 2</p>
+
+    <a id="mainLink" href="#">PLP Website</a>
+
+    <script>
+        // Selecting Elements
+        const title = document.getElementById('mainTitle');
+        const image = document.getElementById('mainImage');
+        const paragraphs = document.getElementsByClassName('info');
+        const link = document.getElementById('mainLink');
+
+
+        // ---------Modifying DOM Elements------------
+
+        // 1. Changing Content
+        title.textContent = "Updated PLP Evening blaa blaaaaa";
+        paragraphs[0].innerHTML = "<h1> Paragraph 1 is now a header </h1>";
+
+        // 2. Changing Attributes
+        const oldImg = image.getAttribute("src");
+        image.setAttribute("src", "1743669862897.jpg");
+        link.setAttribute("href", "https://powerlearnprojectafrica.org/");
+
+        // 3. Modifying Css Styles
+        title.style.color = "blue";
+        title.style.backgroundColor = "lightgray";
+        title.style.fontSize = "100px";
+        title.style.borderRadius = "20px";
+        image.style.borderRadius = "50%";
+
+
+        // 4. Modify Classes
+        paragraphs[0].classList.add("highlight");
+    </script>
+</body>
+</html>
