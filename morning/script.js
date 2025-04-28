@@ -4,7 +4,7 @@ newParagraph.textContent = "This is a new paragraph.";
 
 // Step 2: Create a list with multiple items
 const list = document.createElement("ul");
-for (let i = 1; i <= 3; i++) {
+for (let i = 1; i <= 100; i++) {
   const item = document.createElement("li");
   item.textContent = `Item ${i}`;
   list.appendChild(item);
@@ -14,7 +14,7 @@ for (let i = 1; i <= 3; i++) {
 const contentDiv = document.getElementById("content");
 
 // Append the new paragraph at the end
-contentDiv.appendChild(newParagraph);
+contentDiv.prepend(newParagraph);
 
 // Append the list at the end
 contentDiv.appendChild(list);

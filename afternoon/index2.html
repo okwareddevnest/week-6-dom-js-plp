@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Create and Remove Example</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #ffffff;
+        }
+
+        .new-item{
+            color: rgb(132, 158, 1);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="pageTitle">My Shopping List</h1>
+
+    <div id="listContainer">
+
+    </div>
+
+    <script>
+        //1. Creating Elements
+        const listCont = document.getElementById("listContainer");
+
+        //create a Paragraph
+        const introParagraph = document.createElement('p');
+        introParagraph.textContent = "Here are some items you need to buy";
+        listCont.appendChild(introParagraph);
+
+        //Create a list
+        const shoppingList = document.createElement('ul');
+
+        for (let i=1; i<=20; i++){
+            const listItem = document.createElement('li');
+            listItem.textContent = `Item ${i}`;
+            listItem.classList.add('new-item');
+            shoppingList.appendChild(listItem);
+
+        }
+
+        listCont.appendChild(shoppingList);
+
+
+
+        //2. Instert another paragraph at the top
+        const topNote = document.createElement('p');
+        topNote.textContent = "Dont forget your shopping bag";
+        listCont.prepend(topNote);
+
+        //3. Removing an element
+        //Let's remove the second list item
+        const secondItem = shoppingList.children[1];
+        secondItem.remove();
+    </script>
+</body>
+</html>

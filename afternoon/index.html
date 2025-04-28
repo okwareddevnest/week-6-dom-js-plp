@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Modifying Example</title>
+    <style>
+        .highlight{
+            background-color: yellow;
+            font-weight: bold;
+        }
+        .inactive{
+            opacity: 0.5
+        }
+        .selected{
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="mainTitle">Original Title</h1>
+    <img id="mainImage" src="download.jpeg" alt="PLP Logo" width="500" height="500">
+
+    <p class="info">Paragraph 1</p>
+    <p class="info">Paragraph 2</p>
+
+    <a id="mainLink" href="#">Old Link</a>
+
+    <script>
+        //Selecting Elements
+        const title = document.getElementById('mainTitle');
+        const image = document.getElementById('mainImage');
+        const paragraphs = document.getElementsByClassName('info');
+        const link = document.getElementById('mainLink');
+
+        // 1. Changing Content
+        title.textContent = "Updated Title text";
+        paragraphs[0].innerHTML = "<strong>Paragraph 1 is now Bold!</strong>"; 
+
+        // 2. Changing Attribute
+        const oldSrc = image.getAttribute("src");
+        image.setAttribute("src", "1743669862897.jpg")
+        link.setAttribute("href", "https://powerlearnprojectafrica.org/");
+
+
+        //3. Modifying CSS Styles
+        title.style.color = "blue";
+        title.style.fontSize = "123px";
+        title.style.backgroundColor = "lightgray";
+        title.style.borderRadius = "20px";
+        image.style.border = "20px solid red";
+
+
+        //4. Modifying Classes
+        paragraphs[0].classList.add("highlight");
+        paragraphs[1].classList.remove("inactive");
+        link.classList.toggle("selected");
+
+        
+
+    </script>
+</body>
+</html>
